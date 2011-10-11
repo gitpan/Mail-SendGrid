@@ -1,3 +1,4 @@
+Changes
 LICENSE
 MANIFEST
 META.yml
@@ -8,3 +9,4 @@ lib/Mail/SendGrid.pm
 lib/Mail/SendGrid/Bounce.pm
 t/001-require.t
 t/002-new.t
+t/release-cpan-changes.t

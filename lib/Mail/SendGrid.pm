@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Mail::SendGrid;
 {
-  $Mail::SendGrid::VERSION = '0.01';
+  $Mail::SendGrid::VERSION = '0.02';
 }
 # ABSTRACT: interface to SendGrid.com mail gateway APIs
 
@@ -50,7 +50,7 @@ Mail::SendGrid - interface to SendGrid.com mail gateway APIs
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

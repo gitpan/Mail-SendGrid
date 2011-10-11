@@ -1,0 +1,6 @@
+Revision history for perl module Mail::SendGrid
+
+0.01 2011-10-11
+
+  - initial release of module, with bounces method only
+

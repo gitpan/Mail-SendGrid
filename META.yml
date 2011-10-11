@@ -23,4 +23,4 @@ requires:
 resources:
   bugtracker: https://github.com/neilbowers/Mail-SendGrid/issues
   repository: git://github.com/neilbowers/Mail-SendGrid.git
-version: 0.01
+version: 0.02
