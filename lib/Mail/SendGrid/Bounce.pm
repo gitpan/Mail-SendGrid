@@ -1,6 +1,6 @@
 package Mail::SendGrid::Bounce;
 {
-  $Mail::SendGrid::Bounce::VERSION = '0.02';
+  $Mail::SendGrid::Bounce::VERSION = '0.03';
 }
 # ABSTRACT: data object that holds information about a SendGrid bounce
 use strict;
@@ -8,10 +8,10 @@ use warnings;
 
 use Mouse 0.94;
 
-has 'email'     => (is => 'ro', isa => 'Str');
-has 'created'   => (is => 'ro', isa => 'Str');
-has 'status'    => (is => 'ro', isa => 'Str');
-has 'reason'    => (is => 'ro', isa => 'Str');
+has 'email'     => (is => 'ro', isa => 'Str', required => 1);
+has 'created'   => (is => 'ro', isa => 'Str', required => 1);
+has 'status'    => (is => 'ro', isa => 'Str', required => 1);
+has 'reason'    => (is => 'ro', isa => 'Str', required => 1);
 
 1;
 
@@ -25,13 +25,13 @@ Mail::SendGrid::Bounce - data object that holds information about a SendGrid bou
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
     use Mail::SendGrid::Bounce;
 
-    $bounce = Mail::SendGrid::Bounce(
+    $bounce = Mail::SendGrid::Bounce->new(
                         email   => '...',
                         created => '...',
                         status  => '...',
