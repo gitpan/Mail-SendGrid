@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Mail::SendGrid;
 {
-  $Mail::SendGrid::VERSION = '0.05';
+  $Mail::SendGrid::VERSION = '0.06';
 }
 # ABSTRACT: interface to SendGrid.com mail gateway APIs
 
@@ -78,7 +78,6 @@ sub delete_bounces
     if ($response->{success}) {
         $json = decode_json($response->{content});
         if ($json->{message} eq 'success') {
-            print STDERR "bounces.delete success: response= $response->{content}\n";
             return 1;
         } elsif (exists($json->{message})) {
             carp "bounces.delete failed - error message: $json->{message}\n";
@@ -152,7 +151,7 @@ Mail::SendGrid - interface to SendGrid.com mail gateway APIs
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -252,6 +251,10 @@ type
 email
 
 =back
+
+To delete all bounces, call this without any options:
+
+  $sendgrid->delete_bounces();
 
 =head1 SEE ALSO
 
