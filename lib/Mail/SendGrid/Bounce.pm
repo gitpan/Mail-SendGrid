@@ -1,6 +1,6 @@
 package Mail::SendGrid::Bounce;
 {
-  $Mail::SendGrid::Bounce::VERSION = '0.03';
+  $Mail::SendGrid::Bounce::VERSION = '0.05';
 }
 # ABSTRACT: data object that holds information about a SendGrid bounce
 use strict;
@@ -15,8 +15,8 @@ has 'reason'    => (is => 'ro', isa => 'Str', required => 1);
 
 1;
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -25,7 +25,7 @@ Mail::SendGrid::Bounce - data object that holds information about a SendGrid bou
 
 =head1 VERSION
 
-version 0.03
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -58,12 +58,15 @@ for when the bounce was received back at SendGrid.
 
 =head2 status
 
-Not sure.
+A string which identifies the type of bounce. At the moment my understanding is
+that this will either be the string '4.0.0' for a soft bounce, and '5.0.0' for
+a hard bounce. I'm trying to get confirmation or clarification from SendGrid.
 
 =head2 reason
 
 The reason why the message bounced; typically this is the reason returned
-by the remote MTA.
+by the remote MTA. Sometimes the reason string will start with the SMTP response
+code; I'm trying to find out from SendGrid in what situations that isn't true.
 
 =head1 SEE ALSO
 
@@ -81,10 +84,9 @@ Neil Bowers <neilb@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Neil Bowers <neilb@cpan.org>.
+This software is copyright (c) 2012 by Neil Bowers <neilb@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -22,14 +22,16 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Mail::SendGrid",
   "PREREQ_PM" => {
+    "Carp" => "1.20",
     "HTTP::Tiny" => "0.013",
     "IO::Socket::SSL" => "1.44",
+    "JSON" => "2.53",
     "Mouse" => "0.94",
-    "XML::Simple" => "2.18",
+    "URI::Escape" => "3.30",
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.03",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }
