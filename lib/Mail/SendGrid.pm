@@ -2,10 +2,11 @@ use strict;
 use warnings;
 package Mail::SendGrid;
 {
-  $Mail::SendGrid::VERSION = '0.06';
+  $Mail::SendGrid::VERSION = '0.07';
 }
 # ABSTRACT: interface to SendGrid.com mail gateway APIs
 
+use 5.008;
 use Mouse 0.94;
 use HTTP::Tiny 0.013;
 use JSON 2.53;
@@ -145,13 +146,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Mail::SendGrid - interface to SendGrid.com mail gateway APIs
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

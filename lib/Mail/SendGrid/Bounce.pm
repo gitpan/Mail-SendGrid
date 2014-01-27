@@ -1,11 +1,12 @@
 package Mail::SendGrid::Bounce;
 {
-  $Mail::SendGrid::Bounce::VERSION = '0.06';
+  $Mail::SendGrid::Bounce::VERSION = '0.07';
 }
 # ABSTRACT: data object that holds information about a SendGrid bounce
 use strict;
 use warnings;
 
+use 5.008;
 use Mouse 0.94;
 
 has 'email'     => (is => 'ro', isa => 'Str', required => 1);
@@ -19,13 +20,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Mail::SendGrid::Bounce - data object that holds information about a SendGrid bounce
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
